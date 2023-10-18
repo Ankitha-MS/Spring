@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<bean id="car" class="ioc_demoo.Car" scope="singleton">
+<property name="color" value="Black"></property>
+<property name="price" value="350000"></property>
+<property name="company" value="Audi"></property>
+<property name="musicSystem" ref="jbi"></property>
+</bean>
+<bean id="sony" class="ioc_demoo.SonyMusicSystem"></bean>
+<bean id="jbi" class="ioc_demoo.JbiMusicSystem"></bean>
+
+
+
+<bean id="bike" class="ioc_demoo.Bike" scope="prototype">
+<constructor-arg value="Blue"></constructor-arg>
+<constructor-arg value="255000"></constructor-arg>
+<constructor-arg value="R15"></constructor-arg>
+<constructor-arg ref="jbi1"></constructor-arg>
+</bean>
+
+<bean id="sony1" class="ioc_demoo.SonyMusicSystem"></bean>
+<bean id="jbi1" class="ioc_demoo.JbiMusicSystem"></bean>
+</beans>
+
+
